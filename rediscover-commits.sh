@@ -1,8 +1,8 @@
 #!/bin/bash
 # Script to call GitHub API to find commits that have been removed via force push
 #
-# Usage: ./recovercommits.sh <owner> <repo> <pr_number>
-# Example: ./recovercommits.sh DaneWeber work-bookshelf 1
+# Usage: ./rediscover-commits.sh <owner> <repo> <pr_number>
+# Example: ./rediscover-commits.sh DaneWeber github-utils 1
 #
 # Requires: jq (for JSON parsing)
 # Requires: GITHUB_TOKEN environment variable (GraphQL API requires authentication)
@@ -12,7 +12,7 @@ set -e
 # Check arguments
 if [ $# -lt 3 ]; then
     echo "Usage: $0 <owner> <repo> <pr_number>"
-    echo "Example: $0 DaneWeber work-bookshelf 1"
+    echo "Example: $0 DaneWeber github-utils 1"
     echo ""
     echo "Required: GITHUB_TOKEN environment variable must be set"
     exit 1
